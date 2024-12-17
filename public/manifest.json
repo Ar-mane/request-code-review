@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Request Code Review",
+  "description": "Copy GitHub PR links and commits for code review.",
+  "version": "1.0",
+
+  "icons": {
+    "16": "git.png",
+    "48": "git.png",
+    "128": "git.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/pull/*"],
+      "js": ["githubContent.js"]
+    }
+  ],
+
+  "permissions": ["activeTab", "scripting", "storage", "clipboardWrite"],
+
+  "host_permissions": ["https://github.com/*"]
+}
